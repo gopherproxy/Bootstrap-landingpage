@@ -2,20 +2,40 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <title>BMI calculator</title>
 </head>
 
 <body>
-	<h1>BMI Calculator</h1>
-        <form>
+<!-- Bootstrap grid -->
+<div class="container">
+  <div class="row">
+    <div class="col-md p-5">
+      <h1 class="display-4">BMI Calculator</h1>
+      <div class="jumbotron"> 
+        <!-- web formularet -->
+        <form class="needs-validation" novalidate>
+          <div class="form-group">
             <label for="weight">Your weight in kg:</label>
-            <input type="number" name="weight" placeholder="Your weight (in kg)" required>
+            <input class="form-control" type="number" name="weight" placeholder="Your weight (in kg)" required>
+            <div class="invalid-feedback">Don't cheet - your weight in kg, please!</div>
             <label for="height">Your height in m:</label>
-            <input type="number" name="height" placeholder="Your height (in m)" required>
-            <button ctype="submit">Calculate your BMI</button>
+            <input class="form-control" type="number" name="height" placeholder="Your height (in m)" required>
+            <div class="invalid-feedback">Your height (in meter!)</div>
+          </div>
+          <button class="btn btn-primary btn-lg btn-block mt-4" type="submit">Calculate your BMI</button>
         </form>
         <h2 id="msg">...</h2>
+      </div>
+    </div>
+  </div>
+</div>
 
-<script src="bmi.js"></script> 
+<!-- jQuery + Bootstrap JS --> 
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> 
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> 
+<script src="bmi.js"></script>
 </body>
 </html>
