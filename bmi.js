@@ -20,10 +20,32 @@
   }, false);
 })();
 
+// globale variabler
+var msg, bmi, input;
+
+msg = document.getElementById('msg');
+
 function calculateBMI(){
 	'use strict';
-	console.log ('kald til funktionen');
-	
+	//console.log ('kald til funktionen');
+	input = document.getElementsByTagName('input');
+	// lokale variabler
+	var w = input[0].value;
+	var h = input[1].value;
+	bmi = (w / (h * h)).toFixed(2);
+	if(bmi < 18.5){
+		msg.innerHTML = 'Underweight (BMI: ' + bmi + ')';
+		msg.className = 'alert alert-light';
+	} else if(bmi >= 18.5 && bmi < 25){
+		msg.innerHTML = 'Normal weight (BMI: ' + bmi + ')';
+		msg.className = 'alert alert-success';
+	} else if (bmi >= 25 && bmi < 30){
+		msg.innerHTML = 'Overweight (BMI: ' + bmi + ')';
+		msg.className = 'alert alert-warning';
+	} else {
+		//msg.innerHTML = 'Obesity (BMI: ' + bmi + ')';
+		$('#msg').html('Obesity (BMI: ' + bmi + ')').removeAttr('class').addClass('alert alert-danger');
+	}
 }
 
 /*
