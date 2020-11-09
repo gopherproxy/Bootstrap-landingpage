@@ -3663,6 +3663,7 @@ tbody.collapse.show {
 .custom-checkbox .custom-control-label::before {
   border-radius: 0.25rem; }
 
+/* modification */
 .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
   background-color: #e6007e; }
 

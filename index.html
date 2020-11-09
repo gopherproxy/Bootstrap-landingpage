@@ -6,13 +6,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="https://fonts.googleapis.com/css?family=Exo+2:300,400|Open+Sans:300,400" rel="stylesheet">
-<!-- Bootstrap CSS -->
+<!-- Bootstrap CSS, customized -->
 <link rel="stylesheet" href="files/style.css">
 <title>Landingpage Opgave</title>
 </head>
 
 <body>
+<!-- Header with padding top and bottom -->
 <header class="header py-3">
+    <!-- First container, 1 row, 1 column with logo, full page width -->
   <div class="container">
     <div class="row">
       <div class="col"> <a href="https://www.cphbusiness.dk/" target="_blank"><img src="files/Nordlid_logo_thicker_black_WEB.png" alt="Gå til cphbusiness.dk"></a></div>
@@ -20,6 +22,7 @@
   </div>
 </header>
 <section id="hero-carousel" class="hero carousel slide position-relative">
+    <!-- Second container, 1 row, 1 column with carousel, full page width -->
   <div class="container-fluid">
     <div class="row">
       <div class="col carousel slide px-0">
@@ -55,6 +58,7 @@
   </div>
 </section>
 <section class="py-4 py-lg-5 form">
+    <!-- Third container, 2 rows with responsive columns, form -->
   <div class="container">
     <div class="row mb-3">
       <div class="col">
@@ -62,6 +66,7 @@
       </div>
     </div>
     <div class="row">
+        <!-- resized and reordered on lg (large) devices -->
       <div class="col-12 col-lg-6 order-lg-2">
         <p>Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem.</p>
         <form method="POST" class="form-underlined form-animated validate-me mb-4" novalidate>
@@ -80,6 +85,9 @@
             <input type="tel" id="field-phone" class="animation-trigger form-control" name="mobilePhone" maxlength="8" minlength="8" required>
             <div class="invalid-feedback">Ups. Du mangler at udfylde feltet.</div>
           </div>
+            <!-- Bootstrap custom checkbox -->
+            <!-- https://www.w3schools.com/bootstrap4/bootstrap_forms_custom.asp -->
+            <!-- Modified classes: .custom-checkbox .custom-control-input:checked -->
           <div class="custom-control custom-checkbox">
             <input type="checkbox" class="custom-control-input" id="input-permission" name="permission" required>
             <label class="custom-control-label" for="input-permission">Jeg giver hermed tilladelse til, at Nordlid må gemme og bruge min data til interne projekter. Jeg kan til hver en tid tilbagekalde min accept.</label>
@@ -92,6 +100,7 @@
           </div>
         </form>
       </div>
+         <!-- resized and reordered on lg (large) devices -->
       <div class="col-12 col-lg-6 order-lg-1">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut.</p>
@@ -100,6 +109,7 @@
   </div>
 </section>
 <section class="icons bg-secondary py-5">
+    <!-- Fourth container, 1 row with responsive columns, resized for md (medium) devices and larger, centered content -->
   <div class="container">
     <div class="row">
       <div class="col-12 col-md-4 text-center py-4 px-lg-5"> <img src="files/icon-light-bulb.png" alt="" class="rounded-circle mb-3">
@@ -114,12 +124,14 @@
     </div>
   </div>
 </section>
+     <!-- Footer container, 1 row with responsive columns -->
 <footer class="footer py-5">
   <div class="container">
     <div class="row align-items-end">
       <div class="col-12 col-lg-6 text-white">
         <p><strong>Ut enim ad minima veniam, quis nostrum<br>
           exercitationem ullam corporis suscipit</strong></p>
+          <!-- d-flex flexbox feature -->
         <div class="d-flex align-items-center my-4"> <img src="files/icon-location.png" alt="We live at" class="mr-3">
           <p class="mb-0">Minima veniam, quis 47<br>
             DK-45678 ullam</p>
@@ -137,11 +149,14 @@
     </div>
   </div>
 </footer>
+    <!-- Loading all required scripts-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
 <script src="files/form-field-animation.js"></script> 
 <script>
+    // form validation script from the Bootstrap Forms documentation, section "Custom styles"
+    // https://getbootstrap.com/docs/4.5/components/forms/#custom-styles
         (function() {
             'use strict';
             window.addEventListener('load', function() {
@@ -151,9 +166,12 @@
                 if (form.checkValidity() === false) {
                     event.preventDefault();
                     event.stopPropagation();
-                }
-                form.classList.add('was-validated');
-                    event.preventDefault(); // for web demo only: not sending the form anyway, even on positive validation
+                } 
+                else if (form.checkValidity() === true){ // modification, for web demo only: not sending the form anyway, even on positive validation!
+                      event.preventDefault(); 
+                        alert('Sending the form is disabled in this web demo ;-)!');
+                           }
+                form.classList.add('was-validated'); 
                 }, false);
             }); 
             }, false);
