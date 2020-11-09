@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<!-- online version=https://s3-eu-west-1.amazonaws.com/increaseassets/_SIMON/2018-10-03_praktikant/index.html -->
 <html lang="en">
 <head>
 <!-- Required meta tags -->
+<meta name="robots" content="noindex, nofollow, nosnippet">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="https://fonts.googleapis.com/css?family=Exo+2:300,400|Open+Sans:300,400" rel="stylesheet">
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="files/style.css">
-<title>Praktikant</title>
+<title>Landingpage Opgave</title>
 </head>
 
 <body>
 <header class="header py-3">
   <div class="container">
     <div class="row">
-      <div class="col"> <a href="https://www.nordlid.com/" target="_blank"><img src="files/Nordlid_logo_thicker_black_WEB.png" alt="Gå til nordlid.com"></a> </div>
+      <div class="col"> <a href="https://www.cphbusiness.dk/" target="_blank"><img src="files/Nordlid_logo_thicker_black_WEB.png" alt="Gå til cphbusiness.dk"></a></div>
     </div>
   </div>
 </header>
@@ -64,18 +64,16 @@
     <div class="row">
       <div class="col-12 col-lg-6 order-lg-2">
         <p>Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem.</p>
-        <form action="https://s2331.t.eloqua.com/e/f2" method="POST" class="form-underlined form-animated validate-me mb-4" novalidate>
-          <input type="hidden" name="elqFormName" value="cph-business">
-          <input type="hidden" name="elqSiteID" value="2331">
+        <form method="POST" class="form-underlined form-animated validate-me mb-4" novalidate>
           <div class="form-group label-animated">
             <label for="field-name" class="animation"> Navn </label>
             <input type="text" id="field-name" class="animation-trigger form-control" name="fullName" required>
-            <div class="invalid-feedback">Ups. Du mangler at udfylde feltet.</div>
+            <div class="invalid-feedback">Ups. Du mangler at udfylde dit navn.</div>
           </div>
           <div class="form-group label-animated">
             <label for="field-email" class="animation"> E-mail </label>
             <input type="email" id="field-email" class="animation-trigger form-control" name="emailAddress" required>
-            <div class="invalid-feedback">Ups. Du mangler at udfylde feltet.</div>
+            <div class="invalid-feedback">Ups. Du mangler at udfylde E-mail feltet.</div>
           </div>
           <div class="form-group label-animated mb-3">
             <label for="field-phone" class="animation"> Telefon </label>
@@ -155,8 +153,9 @@
                     event.stopPropagation();
                 }
                 form.classList.add('was-validated');
+                    event.preventDefault(); // for web demo only: not sending the form anyway, even on positive validation
                 }, false);
-            });
+            }); 
             }, false);
         })();
     </script>
